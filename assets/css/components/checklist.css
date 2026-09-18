@@ -1,0 +1,63 @@
+/* ============================================
+   CHECKLIST.CSS — чеклисты
+   ============================================ */
+
+.checklist {
+    list-style: none;
+    margin-left: 0;
+    padding: 0;
+}
+
+.checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    padding: var(--space-2) 0;
+    border-bottom: 1px solid var(--paper-3);
+    font-size: var(--text-sm);
+    color: var(--ink-2);
+}
+
+.checklist li:last-child {
+    border-bottom: none;
+}
+
+.check-box {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    flex-shrink: 0;
+    margin-top: 2px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-fast);
+    background: var(--paper);
+}
+
+.check-box:hover {
+    border-color: var(--success);
+}
+
+.check-box.checked {
+    background: var(--success);
+    border-color: var(--success);
+}
+
+.check-box.checked::after {
+    content: '✓';
+    color: white;
+    font-size: 12px;
+    font-weight: var(--font-bold);
+}
+
+.check-text {
+    flex: 1;
+}
+
+.check-text.checked {
+    text-decoration: line-through;
+    color: var(--ink-3);
+}

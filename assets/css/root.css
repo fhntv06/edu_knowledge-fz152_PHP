@@ -1,0 +1,318 @@
+/* ============================================
+   ROOT.CSS — дизайн-система
+   Цвета, типографика, отступы, тени, анимации
+   ============================================ */
+
+:root {
+    /* ===== Цветовая палитра ===== */
+
+    /* Основные цвета (ink — чернила) */
+    --ink: #1a1916;
+    --ink-2: #3d3c38;
+    --ink-3: #7a7870;
+    --ink-4: #b0aea6;
+    --ink-5: #d4d0c8;
+
+    /* Бумажные тона (paper) */
+    --paper: #f5f3ee;
+    --paper-2: #eceae4;
+    --paper-3: #e2dfd8;
+    --paper-4: #d4d0c8;
+
+    /* Акцентные цвета */
+    --accent: #c0392b;
+    --accent-light: #e8a89f;
+    --accent-dark: #8a251a;
+
+    /* Функциональные цвета */
+    --blue: #2563a8;
+    --blue-light: #dbeafe;
+    --blue-dark: #1e4a7a;
+
+    --green: #1d6b3e;
+    --green-light: #d1fae5;
+    --green-dark: #14532d;
+
+    --amber: #92570a;
+    --amber-light: #fef3c7;
+    --amber-dark: #78350f;
+
+    /* Системные цвета */
+    --success: var(--green);
+    --success-light: var(--green-light);
+    --warning: var(--amber);
+    --warning-light: var(--amber-light);
+    --error: var(--accent);
+    --error-light: #fee2e2;
+    --info: var(--blue);
+    --info-light: var(--blue-light);
+
+    /* Границы */
+    --border-color: var(--paper-4);
+    --border-color-dark: var(--ink-4);
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+    --border-radius-xl: 16px;
+    --border-radius-full: 9999px;
+
+    /* ===== Типографика ===== */
+
+    /* Шрифты */
+    --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    --font-sans: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', 'SF Mono', Monaco, 'Cascadia Code', monospace;
+
+    /* Размеры шрифтов — УВЕЛИЧЕННЫЕ */
+    --text-xs: 12px;      /* было 11px */
+    --text-sm: 14px;      /* было 13px */
+    --text-base: 16px;    /* было 15px */
+    --text-md: 18px;      /* было 16px */
+    --text-lg: 20px;      /* было 18px */
+    --text-xl: 26px;      /* было 22px */
+    --text-2xl: 32px;     /* было 28px */
+    --text-3xl: 42px;     /* было 36px */
+    --text-4xl: 56px;     /* было 48px */
+
+    /* Высота строки */
+    --leading-none: 1;
+    --leading-tight: 1.2;
+    --leading-normal: 1.5;
+    --leading-relaxed: 1.6;
+    --leading-loose: 1.75;
+
+    /* Толщина шрифта */
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+
+    /* Буквица (интерлиньяж) */
+    --letter-spacing-tight: -0.025em;
+    --letter-spacing-normal: 0;
+    --letter-spacing-wide: 0.025em;
+    --letter-spacing-wider: 0.05em;
+    --letter-spacing-widest: 0.1em;
+
+    /* ===== Отступы (spacing) ===== */
+
+    /* Базовый множитель — 4px */
+    --space-0: 0;
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-7: 28px;
+    --space-8: 32px;
+    --space-9: 36px;
+    --space-10: 40px;
+    --space-11: 44px;
+    --space-12: 48px;
+    --space-14: 56px;
+    --space-16: 64px;
+    --space-20: 80px;
+    --space-24: 96px;
+
+    /* Отступы для контента */
+    --content-padding-mobile: var(--space-5);
+    --content-padding-tablet: var(--space-8);
+    --content-padding-desktop: var(--space-12);
+
+    /* ===== Тени ===== */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+    /* ===== Анимации ===== */
+    --transition-fast: 150ms;
+    --transition-base: 200ms;
+    --transition-slow: 300ms;
+    --ease-default: ease;
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* ===== Z-индексы ===== */
+    --z-negative: -1;
+    --z-elevate: 1;
+    --z-sticky: 10;
+    --z-header: 20;
+    --z-overlay: 30;
+    --z-modal: 40;
+    --z-popover: 50;
+    --z-toast: 60;
+
+    /* ===== Максимальная ширина контента ===== */
+    --content-max-width: 820px;
+    --content-max-width-wide: 1200px;
+    --sidebar-width: 260px;
+    --sidebar-width-collapsed: 72px;
+}
+
+/* ===== Базовые стили ===== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    line-height: var(--leading-normal);
+    color: var(--ink);
+    background: var(--paper);
+    min-height: 100vh;
+}
+
+/* ===== Типографика для контента ===== */
+
+h1, .h1 {
+    font-family: var(--font-serif);
+    font-size: var(--text-3xl);
+    font-weight: var(--font-bold);
+    line-height: var(--leading-tight);
+    margin-bottom: var(--space-4);
+    color: var(--ink);
+}
+
+h2, .h2 {
+    font-family: var(--font-serif);
+    font-size: var(--text-xl);
+    font-weight: var(--font-semibold);
+    line-height: var(--leading-tight);
+    margin-top: var(--space-12);
+    margin-bottom: var(--space-4);
+    padding-top: var(--space-2);
+    color: var(--ink);
+}
+
+h3, .h3 {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: var(--font-medium);
+    letter-spacing: var(--letter-spacing-wider);
+    text-transform: uppercase;
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-3);
+    color: var(--ink-2);
+}
+
+h4, .h4 {
+    font-family: var(--font-sans);
+    font-size: var(--text-md);
+    font-weight: var(--font-semibold);
+    margin-top: var(--space-6);
+    margin-bottom: var(--space-2);
+    color: var(--ink);
+}
+
+p {
+    margin-bottom: var(--space-4);
+    color: var(--ink-2);
+    line-height: var(--leading-relaxed);
+}
+
+a {
+    color: var(--blue);
+    text-decoration: none;
+    transition: color var(--transition-fast) var(--ease-default);
+}
+
+a:hover {
+    color: var(--blue-dark);
+}
+
+/* Списки */
+ul, ol {
+    margin: 0 0 var(--space-4) var(--space-5);
+    color: var(--ink-2);
+}
+
+li {
+    margin-bottom: var(--space-2);
+    line-height: var(--leading-relaxed);
+}
+
+/* Код */
+code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    background: var(--paper-2);
+    padding: 0.2em 0.4em;
+    border-radius: var(--border-radius-sm);
+    color: var(--accent);
+}
+
+pre {
+    background: var(--ink);
+    color: var(--paper-2);
+    padding: var(--space-5);
+    border-radius: var(--border-radius-md);
+    overflow-x: auto;
+    margin: var(--space-6) 0;
+}
+
+pre code {
+    background: none;
+    color: inherit;
+    padding: 0;
+}
+
+/* Цитаты */
+blockquote {
+    border-left: 3px solid var(--ink-4);
+    padding: var(--space-3) var(--space-5);
+    margin: var(--space-6) 0;
+    background: var(--paper-2);
+    border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+    font-style: italic;
+    color: var(--ink-2);
+}
+
+/* Таблицы */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--space-6) 0;
+    font-size: var(--text-sm);
+}
+
+th {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: var(--letter-spacing-widest);
+    text-transform: uppercase;
+    text-align: left;
+    padding: var(--space-2) var(--space-3);
+    border-bottom: 1px solid var(--border-color);
+    color: var(--ink-3);
+}
+
+td {
+    padding: var(--space-3) var(--space-3);
+    border-bottom: 1px solid var(--paper-3);
+    vertical-align: top;
+}
+
+tr:hover td {
+    background: var(--paper-2);
+}
+
+/* Разделитель */
+hr {
+    border: none;
+    height: 1px;
+    background: var(--border-color);
+    margin: var(--space-8) 0;
+}

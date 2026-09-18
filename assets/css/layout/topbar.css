@@ -1,0 +1,37 @@
+/* ============================================
+   TOPBAR.CSS — верхняя панель
+   ============================================ */
+
+.topbar {
+    background: var(--paper);
+    border-bottom: 1px solid var(--border-color);
+    padding: var(--space-3) var(--space-12);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: var(--z-header);
+}
+
+.topbar-breadcrumb {
+    font-size: var(--text-sm);
+    font-family: var(--font-mono);
+    color: var(--ink-3);
+}
+
+.topbar-breadcrumb span {
+    color: var(--ink);
+}
+
+.topbar-actions {
+    display: flex;
+    gap: var(--space-2);
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+    .topbar {
+        padding: var(--space-3) var(--space-5);
+    }
+}

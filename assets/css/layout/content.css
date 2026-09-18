@@ -1,0 +1,40 @@
+/* ============================================
+   CONTENT.CSS — основной контент
+   ============================================ */
+
+.layout {
+    display: grid;
+    grid-template-columns: var(--sidebar-width) 1fr;
+    min-height: 100vh;
+}
+
+.main {
+    overflow-y: auto;
+    min-width: 0; /* предотвращает переполнение */
+}
+
+.content-area {
+    padding: var(--space-12) var(--space-12) var(--space-20);
+    max-width: var(--content-max-width);
+    width: 100%;
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .content-area {
+        padding: var(--space-7) var(--space-5) var(--space-12);
+    }
+}
+
+/* Широкий контент (например, карточки) */
+.content-area-wide {
+    max-width: var(--content-max-width-wide);
+}
+
+.content-area-wide .cards-grid {
+    margin: 0;
+}

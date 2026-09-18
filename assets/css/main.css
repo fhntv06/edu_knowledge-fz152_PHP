@@ -1,0 +1,29 @@
+/* ============================================
+   MAIN.CSS — точка входа для всех стилей
+   ============================================ */
+
+/* Дизайн-система */
+@import "root.css";
+
+/* Базовые компоненты */
+@import "components/buttons.css";
+@import "components/cards.css";
+@import "components/callouts.css";
+@import "components/tags.css";
+@import "components/checklist.css";
+
+/* Макеты */
+@import "layout/article.css";
+@import "layout/sidebar.css";
+@import "layout/topbar.css";
+@import "layout/content.css";
+
+/* Утилиты */
+@import "utilities.css";
+
+/* Админка */
+@import "admin.css";
+
+/* Специфичные стили для страниц (если нужно) */
+@import "pages/study-plan.css";
+@import "pages/attestation.css";

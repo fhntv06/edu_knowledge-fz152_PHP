@@ -1,0 +1,405 @@
+/* ============================================
+   ADMIN.CSS — стили для панели управления
+   ============================================ */
+
+/* Контейнер админки */
+.admin-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-6);
+}
+
+/* Шапка админки */
+.admin-header {
+    background: var(--ink);
+    padding: var(--space-5) var(--space-8);
+    border-radius: var(--border-radius-lg);
+    margin-bottom: var(--space-8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Админка */
+.admin-header h1 {
+    font-family: var(--font-serif);
+    font-size: var(--text-2xl);     /* 32px */
+    font-weight: var(--font-semibold);
+    margin: 0;
+}
+
+.admin-header a {
+    color: var(--paper);
+    opacity: 0.8;
+    transition: opacity var(--transition-fast);
+}
+
+.admin-header a:hover {
+    opacity: 1;
+}
+
+/* Формы админки */
+.admin-form {
+    background: var(--paper);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-8);
+    box-shadow: var(--shadow-md);
+    position: relative;
+}
+
+/* Группа полей */
+.form-group {
+    margin-bottom: var(--space-5);
+}
+
+.form-group label {
+    display: block;
+    font-weight: var(--font-medium);
+    font-size: var(--text-sm);       /* 14px */
+    margin-bottom: var(--space-2);
+    color: var(--ink-2);
+}
+
+/* Поля ввода */
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: var(--space-3) var(--space-4);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    font-family: inherit;
+    font-size: var(--text-sm);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--blue);
+    box-shadow: 0 0 0 2px rgba(37, 99, 168, 0.2);
+}
+
+.form-group textarea {
+    min-height: 200px;
+    font-family: var(--font-mono);
+    resize: vertical;
+}
+
+/* Строка с несколькими полями */
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-5);
+}
+
+/* Чекбокс группа */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-top: var(--space-6);
+}
+
+.checkbox-group label {
+    margin-bottom: 0;
+}
+
+.checkbox-group input {
+    width: auto;
+    transform: scale(1.1);
+}
+
+/* Группа кнопок внизу формы */
+.button-group {
+    display: flex;
+    gap: var(--space-4);
+    margin-top: var(--space-8);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--border-color);
+}
+
+/* Кнопки (переопределение для админки) */
+.admin-form .btn {
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--border-radius-md);
+    font-size: var(--text-sm);
+}
+
+/* Фиксированные кнопки-опции (для редактора) */
+.buttons-options {
+    z-index: var(--z-header);
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-6) var(--space-8);
+    transform: translate(-50%);
+    background: var(--paper);
+    border-top: 1px solid var(--border-color);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Алерты */
+.alert {
+    padding: var(--space-4) var(--space-5);
+    border-radius: var(--border-radius-md);
+    margin-bottom: var(--space-5);
+}
+
+.alert-success {
+    background: var(--success-light);
+    color: var(--success-dark, var(--green-dark));
+    border-left: 3px solid var(--success);
+}
+
+.alert-error {
+    background: var(--error-light);
+    color: var(--error-dark, var(--accent-dark));
+    border-left: 3px solid var(--error);
+}
+
+/* Подсказки */
+.tag-hint {
+    font-size: var(--text-xs);
+    color: var(--ink-3);
+    margin-top: var(--space-2);
+    line-height: var(--leading-normal);
+}
+
+/* Бейджи статусов */
+.status-badge {
+    display: inline-block;
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--border-radius-md);
+    font-size: var(--text-xs);
+    font-family: var(--font-mono);
+}
+
+.status-learning {
+    background: var(--warning-light);
+    color: var(--warning-dark, var(--amber-dark));
+}
+
+.status-done {
+    background: var(--success-light);
+    color: var(--success-dark, var(--green-dark));
+}
+
+.status-draft {
+    background: var(--paper-2);
+    color: var(--ink-3);
+}
+
+/* ============================================
+   Управление секциями (sections.php)
+   ============================================ */
+
+.sections-list {
+    background: var(--paper);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-5);
+    border: 1px solid var(--border-color);
+}
+
+.section-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--border-color);
+    transition: background var(--transition-fast);
+}
+
+.section-item:last-child {
+    border-bottom: none;
+}
+
+.section-item:hover {
+    background: var(--paper-2);
+}
+
+.section-drag {
+    cursor: grab;
+    color: var(--ink-3);
+    font-size: 18px;
+    user-select: none;
+}
+
+.section-drag:active {
+    cursor: grabbing;
+}
+
+.section-name {
+    flex: 1;
+    font-weight: var(--font-medium);
+    color: var(--ink);
+}
+
+.section-key {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--ink-3);
+    background: var(--paper-2);
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--border-radius-sm);
+}
+
+.section-badge {
+    font-size: var(--text-xs);
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--border-radius-md);
+    background: var(--success-light);
+    color: var(--success-dark, var(--green-dark));
+}
+
+.section-badge.system {
+    background: var(--info-light);
+    color: var(--info-dark, var(--blue-dark));
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: var(--error);
+    cursor: pointer;
+    font-size: 18px;
+    padding: var(--space-1);
+    transition: opacity var(--transition-fast);
+}
+
+.delete-btn:hover {
+    opacity: 0.7;
+}
+
+/* Форма добавления секции */
+.add-section-form {
+    background: var(--paper);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-5);
+    margin-bottom: var(--space-8);
+    display: flex;
+    gap: var(--space-4);
+    align-items: flex-end;
+    border: 1px solid var(--border-color);
+}
+
+.add-section-form .form-group {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.add-section-form .form-group label {
+    margin-bottom: var(--space-2);
+}
+
+/* ============================================
+   Редактор (SimpleMDE)
+   ============================================ */
+
+/* Оверрайды для SimpleMDE */
+.editor-toolbar {
+    border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
+    border-color: var(--border-color);
+}
+
+.CodeMirror {
+    border-radius: 0 0 var(--border-radius-md) var(--border-radius-md);
+    border-color: var(--border-color);
+    min-height: 500px;
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+}
+
+.CodeMirror-focused {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 1px var(--blue);
+}
+
+/* Компактный редактор для desc */
+.desc-editor-wrapper .CodeMirror {
+    min-height: 150px;
+}
+
+/* ============================================
+   Адаптивность
+   ============================================ */
+
+@media (max-width: 768px) {
+    .admin-container {
+        padding: var(--space-4);
+    }
+
+    .admin-header {
+        padding: var(--space-4) var(--space-5);
+        margin-bottom: var(--space-5);
+    }
+
+    .admin-header h1 {
+        font-size: var(--text-lg);
+    }
+
+    .admin-form {
+        padding: var(--space-5);
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+
+    .button-group {
+        flex-wrap: wrap;
+    }
+
+    .button-group .btn {
+        flex: 1;
+        min-width: 120px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .buttons-options {
+        padding: var(--space-4);
+    }
+
+    .add-section-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .add-section-form .form-group {
+        margin-bottom: var(--space-3);
+    }
+
+    .section-item {
+        flex-wrap: wrap;
+        gap: var(--space-2);
+    }
+
+    .section-name {
+        width: 100%;
+        order: 1;
+    }
+
+    .section-key {
+        order: 2;
+    }
+
+    .section-badge {
+        order: 3;
+    }
+
+    .delete-btn {
+        order: 4;
+        margin-left: auto;
+    }
+
+    .section-drag {
+        order: 0;
+    }
+}

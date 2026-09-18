@@ -1,0 +1,40 @@
+/* ============================================
+   CALLOUTS.CSS — компоненты выносов
+   ============================================ */
+
+.callout {
+    border-left: 3px solid;
+    padding: var(--space-4) var(--space-5);
+    margin: var(--space-6) 0;
+    border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+}
+
+.callout-warn {
+    border-color: var(--error);
+    background: var(--error-light);
+    color: var(--accent-dark);
+}
+
+.callout-info {
+    border-color: var(--info);
+    background: var(--info-light);
+    color: var(--blue-dark);
+}
+
+.callout-tip {
+    border-color: var(--success);
+    background: var(--success-light);
+    color: var(--green-dark);
+}
+
+.callout-title {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    letter-spacing: var(--letter-spacing-wider);
+    text-transform: uppercase;
+    margin-bottom: var(--space-2);
+    opacity: 0.8;
+}

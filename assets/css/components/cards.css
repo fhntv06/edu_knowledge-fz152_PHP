@@ -1,0 +1,93 @@
+/* ============================================
+   CARDS.CSS — компоненты карточек
+   ============================================ */
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 1px;
+    margin: 0 var(--content-padding-desktop);
+    box-shadow: 0 0 5px 2px var(--border-color);
+    min-height: 250px;
+}
+
+.card-item {
+    background: var(--paper);
+    padding: var(--space-7) var(--space-8);
+    cursor: pointer;
+    transition: background var(--transition-fast) var(--ease-default);
+    position: relative;
+}
+
+.card-item:nth-child(odd) {
+    border-right: 1px solid var(--paper-2);
+}
+
+.card-item:hover {
+    background: var(--paper-2);
+}
+
+.card-item-num {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--ink-4);
+    margin-bottom: var(--space-3);
+}
+
+/* Карточки на главной */
+.card-item-title {
+    font-family: var(--font-serif);
+    font-size: var(--text-xl);       /* 26px — крупнее */
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--space-2);
+    line-height: var(--leading-tight);
+    color: var(--ink);
+}
+
+.card-item-desc {
+    font-size: var(--text-sm);       /* 14px */
+    color: var(--ink-3);
+    line-height: var(--leading-normal);
+    margin-bottom: var(--space-3);
+}
+
+.card-item-footer {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+}
+
+.card-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--paper-3);
+}
+
+.card-progress-bar {
+    height: 100%;
+    background: var(--green);
+    transition: width var(--transition-slow) var(--ease-in-out);
+}
+
+.not-found {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink-3);
+    margin: 0;
+}
+/* Мобильная версия */
+@media (max-width: 768px) {
+    .cards-grid {
+        grid-template-columns: 1fr;
+        margin: 0 calc(-1 * var(--content-padding-mobile));
+    }
+
+    .card-item {
+        padding: var(--space-5) var(--space-6);
+    }
+}

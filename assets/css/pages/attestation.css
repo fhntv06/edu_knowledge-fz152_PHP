@@ -1,0 +1,547 @@
+/* ============================================
+   ATTESTATION.CSS — стили для страницы аттестации
+   Единый стиль для всех тестов
+   ============================================ */
+
+/* ============================================
+   ОБЩИЙ ПРОГРЕСС
+   ============================================ */
+
+.attestation-progress {
+    margin-bottom: var(--space-8);
+    padding: var(--space-5) var(--space-6);
+    background: var(--paper-2);
+    border-radius: var(--border-radius-lg);
+}
+
+.attestation-progress .progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--ink-3);
+    margin-bottom: var(--space-3);
+}
+
+.attestation-progress .progress-label strong {
+    color: var(--ink);
+}
+
+.attestation-progress .progress-bar-wrap {
+    background: var(--paper-3);
+    border-radius: var(--border-radius-full);
+    height: 6px;
+    overflow: hidden;
+}
+
+.attestation-progress .progress-bar {
+    height: 100%;
+    border-radius: var(--border-radius-full);
+    background: var(--green);
+    transition: width var(--transition-slow) var(--ease-in-out);
+}
+
+/* ============================================
+   КАРТОЧКИ МОДУЛЕЙ
+   ============================================ */
+
+.module-card {
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-lg);
+    margin-bottom: var(--space-4);
+    overflow: hidden;
+    background: var(--paper);
+    transition: border-color var(--transition-fast);
+}
+
+.module-card:hover {
+    border-color: var(--ink-4);
+}
+
+.module-card.active {
+    border-color: var(--ink-3);
+}
+
+.module-card.final {
+    border-color: var(--accent);
+    border-width: 2px;
+}
+
+.module-card.final .module-num {
+    color: var(--accent);
+}
+
+.module-card.passed {
+    border-left: 4px solid var(--success);
+}
+
+.module-card.failed {
+    border-left: 4px solid var(--error);
+}
+
+/* ============================================
+   ЗАГОЛОВОК МОДУЛЯ
+   ============================================ */
+
+.module-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-4) var(--space-6);
+    cursor: pointer;
+    background: var(--paper);
+    transition: background var(--transition-fast);
+    user-select: none;
+}
+
+.module-header:hover {
+    background: var(--paper-2);
+}
+
+.module-num {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: var(--font-medium);
+    letter-spacing: var(--letter-spacing-wider);
+    color: var(--ink-3);
+    min-width: 80px;
+    flex-shrink: 0;
+}
+
+.module-title {
+    flex: 1;
+    font-size: var(--text-base);
+    font-weight: var(--font-medium);
+    color: var(--ink);
+}
+
+.module-status {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--border-radius-full);
+    background: var(--paper-2);
+    color: var(--ink-3);
+    white-space: nowrap;
+}
+
+.module-status.passed {
+    background: var(--success-light);
+    color: var(--success);
+}
+
+.module-status.failed {
+    background: var(--error-light);
+    color: var(--error);
+}
+
+.module-status.available {
+    background: var(--info-light);
+    color: var(--info);
+}
+
+.module-status.locked {
+    background: var(--paper-2);
+    color: var(--ink-3);
+}
+
+.module-chevron {
+    font-size: var(--text-md);
+    color: var(--ink-3);
+    transition: transform var(--transition-fast) var(--ease-in-out);
+}
+
+.module-card.active .module-chevron {
+    transform: rotate(180deg);
+}
+
+/* ============================================
+   ТЕЛО МОДУЛЯ
+   ============================================ */
+
+.module-body {
+    display: none;
+    padding: 0 var(--space-6) var(--space-6);
+    border-top: 1px solid var(--border-color);
+    background: var(--paper);
+}
+
+.module-card.active .module-body {
+    display: block;
+}
+
+/* ============================================
+   ОПИСАНИЕ МОДУЛЯ (ЗУН)
+   ============================================ */
+
+.module-desc {
+    background: var(--paper-2);
+    border-radius: var(--border-radius-md);
+    padding: var(--space-4) var(--space-5);
+    margin: var(--space-5) 0;
+    font-size: var(--text-sm);
+    color: var(--ink-2);
+    line-height: var(--leading-relaxed);
+}
+
+.module-desc strong {
+    color: var(--ink);
+    font-weight: var(--font-medium);
+}
+
+.module-desc ul {
+    margin: var(--space-2) 0 0 var(--space-5);
+}
+
+.module-desc li {
+    margin-bottom: var(--space-1);
+}
+
+/* ============================================
+   ВОПРОСЫ ТЕСТА (единый стиль)
+   ============================================ */
+
+.test-questions {
+    margin: var(--space-5) 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+}
+
+/* Карточка вопроса */
+.question,
+.big-test-question {
+    background: var(--paper);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-5);
+    transition: all var(--transition-fast);
+}
+
+.question.correct,
+.big-test-question.correct {
+    border-color: var(--success);
+    background: var(--success-light);
+}
+
+.question.incorrect,
+.big-test-question.incorrect {
+    border-color: var(--error);
+    background: var(--error-light);
+}
+
+/* Заголовок вопроса */
+.question-header,
+.big-test-q-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-3);
+}
+
+.question-num,
+.big-test-q-num {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    color: var(--ink-3);
+}
+
+.question-mod,
+.big-test-q-mod {
+    font-size: var(--text-xs);
+    padding: 2px var(--space-2);
+    background: var(--paper-2);
+    border-radius: var(--border-radius-sm);
+    color: var(--ink-2);
+}
+
+.question-status,
+.big-test-q-status {
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    padding: 2px var(--space-3);
+    border-radius: var(--border-radius-sm);
+    margin-left: auto;
+}
+
+.question-status.correct,
+.big-test-q-status.correct {
+    background: var(--success-light);
+    color: var(--success);
+}
+
+.question-status.incorrect,
+.big-test-q-status.incorrect {
+    background: var(--error-light);
+    color: var(--error);
+}
+
+/* Текст вопроса */
+.question-text,
+.big-test-q-text {
+    font-size: var(--text-base);
+    font-weight: var(--font-medium);
+    margin-bottom: var(--space-4);
+    color: var(--ink);
+    line-height: var(--leading-relaxed);
+}
+
+/* Варианты ответов */
+.question-options,
+.big-test-opts {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.question-option,
+.big-test-opt {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    background: var(--paper);
+}
+
+.question-option:hover:not(.correct-answer):not(.wrong-answer):not(.disabled),
+.big-test-opt:hover:not(.correct-answer):not(.wrong-answer):not(.disabled) {
+    background: var(--paper-2);
+}
+
+.question-option input[type="radio"],
+.big-test-opt input[type="radio"] {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.question-option.correct-answer,
+.big-test-opt.correct-answer {
+    border-color: var(--success);
+    background: var(--success-light);
+}
+
+.question-option.wrong-answer,
+.big-test-opt.wrong-answer {
+    border-color: var(--error);
+    background: var(--error-light);
+}
+
+.question-option.disabled,
+.big-test-opt.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Пояснение */
+.question-explain,
+.big-test-explain {
+    margin-top: var(--space-4);
+    padding: var(--space-4);
+    background: var(--paper-2);
+    border-radius: var(--border-radius-md);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+    color: var(--ink-2);
+    border-left: 3px solid var(--info);
+}
+
+.question-explain strong,
+.big-test-explain strong {
+    color: var(--ink);
+}
+
+/* ============================================
+   БОЛЬШОЙ ТЕСТ (дополнительные стили)
+   ============================================ */
+
+.big-test-header {
+    margin-bottom: var(--space-5);
+}
+
+.big-test-header h2 {
+    font-family: var(--font-serif);
+    font-size: var(--text-xl);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--space-1);
+    color: var(--ink);
+}
+
+.big-test-header p {
+    color: var(--ink-3);
+    margin-bottom: var(--space-4);
+    font-size: var(--text-sm);
+}
+
+.big-test-progress {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-3) var(--space-4);
+    background: var(--paper-2);
+    border-radius: var(--border-radius-md);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--ink-2);
+}
+
+.big-test-progress strong {
+    color: var(--ink);
+}
+
+.big-test-result {
+    padding: var(--space-6);
+    border-radius: var(--border-radius-lg);
+    text-align: center;
+    margin: var(--space-5) 0;
+}
+
+.big-test-result.passed {
+    background: var(--success-light);
+    border: 2px solid var(--success);
+}
+
+.big-test-result.failed {
+    background: var(--error-light);
+    border: 2px solid var(--error);
+}
+
+.big-test-result h3 {
+    font-family: var(--font-serif);
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-2);
+}
+
+.big-test-result p {
+    margin-bottom: var(--space-2);
+    font-size: var(--text-base);
+    color: var(--ink-2);
+}
+
+.big-test-result .big-test-retake {
+    color: var(--error);
+    font-weight: var(--font-medium);
+}
+
+/* ============================================
+   КНОПКИ
+   ============================================ */
+
+.module-body .btn {
+    margin-top: var(--space-4);
+}
+
+.module-body .btn-primary {
+    background: var(--ink);
+    color: var(--paper);
+    border: 1px solid var(--ink);
+}
+
+.module-body .btn-primary:hover {
+    background: var(--ink-2);
+    border-color: var(--ink-2);
+}
+
+.module-body .btn-success {
+    background: var(--success);
+    color: white;
+    border: 1px solid var(--success);
+}
+
+.module-body .btn-success:hover {
+    background: var(--green-dark);
+    border-color: var(--green-dark);
+}
+
+.module-body .btn-secondary {
+    background: var(--paper-2);
+    color: var(--ink);
+    border: 1px solid var(--border-color);
+}
+
+.module-body .btn-secondary:hover {
+    background: var(--paper-3);
+}
+
+/* ============================================
+   АДАПТИВНОСТЬ
+   ============================================ */
+
+@media (max-width: 768px) {
+    .module-header {
+        padding: var(--space-3) var(--space-4);
+        flex-wrap: wrap;
+        gap: var(--space-2);
+    }
+
+    .module-num {
+        min-width: auto;
+        font-size: 10px;
+    }
+
+    .module-title {
+        font-size: var(--text-sm);
+        width: 100%;
+        order: 3;
+    }
+
+    .module-status {
+        font-size: 10px;
+        margin-left: auto;
+    }
+
+    .module-chevron {
+        order: 4;
+    }
+
+    .module-body {
+        padding: 0 var(--space-4) var(--space-4);
+    }
+
+    .question,
+    .big-test-question {
+        padding: var(--space-4);
+    }
+
+    .question-header,
+    .big-test-q-header {
+        flex-wrap: wrap;
+    }
+
+    .question-status,
+    .big-test-q-status {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .question-option,
+    .big-test-opt {
+        padding: var(--space-3);
+    }
+
+    .big-test-progress {
+        flex-direction: column;
+        gap: var(--space-3);
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .big-test-result {
+        padding: var(--space-4);
+    }
+
+    .big-test-result h3 {
+        font-size: var(--text-xl);
+    }
+
+    .attestation-progress {
+        padding: var(--space-4);
+    }
+}
